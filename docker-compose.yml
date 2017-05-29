@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  mongodb:
+    image: justdevzero/mongodb24
+    volumes:
+      - 'mongolib:/var/lib/mongodb'
+      - 'mongolog:/var/log/mongodb'
+      - 'mongoetc:/etc/mongodb'
+    ports:
+      - '27017:27017'
+      - '28017:28017'
+volumes:
+  mongolib:
+    driver: local
+  mongolog:
+    driver: local
+  mongoetc:
+    driver: local
