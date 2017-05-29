@@ -11,6 +11,8 @@ RUN (DEBIAN_FRONTEND=noninteractive apt-get install -y mongodb)
 
 RUN (mkdir /etc/mongodb)
 ADD confs/mongodb.conf /etc/mongodb/mongodb.conf
+ADD init.d/mongodb /etc/init.d/mongodb
+ADD systemd/mongodb.service /lib/systemd/system/mongodb.service
 
 ADD run.sh /usr/local/bin/run
 RUN (chmod +x /usr/local/bin/run)
